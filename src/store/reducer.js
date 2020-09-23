@@ -40,6 +40,14 @@ const reducer = (state = initialState, action) => {
     }
   }
 
+  if(action.type === 'DELETE_RESULT'){
+    const newResults = state.results.filter(result => result.id !== action.id)
+    return {
+      ...state,
+      results: newResults
+    }
+  }
+
   return state;
 }
 
